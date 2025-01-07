@@ -30,7 +30,8 @@ import com.example.cupcakeapplication.navigation.CupcakeScreens
 @Composable
 fun StartOrderScreen(
     modifier: Modifier = Modifier,
-    navController: NavController
+    navController: NavController,
+    subTotal: (Int) -> Unit
 ) {
     Scaffold(
         topBar = {
@@ -68,7 +69,10 @@ fun StartOrderScreen(
 
             Column(modifier.fillMaxWidth()) {
                 Button(
-                    onClick = { navController.navigate(CupcakeScreens.SelectFlavorScreen.route) },
+                    onClick = {
+                        navController.navigate(CupcakeScreens.SelectFlavorScreen.route)
+                        subTotal(1)
+                    },
                     shape = RoundedCornerShape(32.dp),
                     modifier = modifier
                         .padding(8.dp)
@@ -84,7 +88,10 @@ fun StartOrderScreen(
                     )
                 }
                 Button(
-                    onClick = { navController.navigate(CupcakeScreens.SelectFlavorScreen.route) },
+                    onClick = {
+                        navController.navigate(CupcakeScreens.SelectFlavorScreen.route)
+                        subTotal(6)
+                    },
                     shape = RoundedCornerShape(32.dp),
                     modifier = modifier
                         .padding(8.dp)
@@ -100,7 +107,10 @@ fun StartOrderScreen(
                     )
                 }
                 Button(
-                    onClick = { navController.navigate(CupcakeScreens.SelectFlavorScreen.route) },
+                    onClick = {
+                        navController.navigate(CupcakeScreens.SelectFlavorScreen.route)
+                        subTotal(12)
+                    },
                     shape = RoundedCornerShape(32.dp),
                     modifier = modifier
                         .padding(8.dp)

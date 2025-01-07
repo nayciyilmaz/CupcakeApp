@@ -19,7 +19,8 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun EditTopAppBar(
     title: String,
-    navigateBack: Boolean
+    navigateBack: Boolean,
+    navigateIcon: () -> Unit = {}
 ) {
     TopAppBar(
         title = {
@@ -37,7 +38,7 @@ fun EditTopAppBar(
         ),
         navigationIcon = {
             if (navigateBack) {
-                IconButton(onClick = { }) {
+                IconButton(onClick = { navigateIcon() }) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
                         contentDescription = null,
