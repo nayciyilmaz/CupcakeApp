@@ -8,6 +8,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.cupcakeapplication.screens.SelectDateScreen
 import com.example.cupcakeapplication.screens.SelectFlavorScreen
 import com.example.cupcakeapplication.screens.StartOrderScreen
 import com.example.cupcakeapplication.viewmodel.OrderViewModel
@@ -39,7 +40,15 @@ fun CupcakeNavigation() {
             )
         }
         composable(CupcakeScreens.SelectDateScreen.route) {
-
+            SelectDateScreen(
+                navController = navController,
+                totalPrice = { orderViewModel.formatTotalPrice() },
+                canNavigateBack = navController.previousBackStackEntry != null,
+                resetOrder = { orderViewModel.resetOrder() },
+                currentDateList = { orderViewModel.currentDateList() },
+                setDate = { orderViewModel.setDate(it) },
+                date = uiState.date
+            )
         }
         composable(CupcakeScreens.SummaryScreen.route) {
 

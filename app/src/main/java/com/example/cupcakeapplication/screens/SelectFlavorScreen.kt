@@ -98,7 +98,6 @@ fun SelectFlavorScreen(
                 color = MaterialTheme.colorScheme.primary.copy(alpha = 0.5f),
                 modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
             )
-
             Text(
                 text = stringResource(R.string.subtotal, totalPrice()),
                 modifier = modifier
