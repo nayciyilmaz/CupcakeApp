@@ -38,6 +38,8 @@ class OrderViewModel : ViewModel() {
         }
     }
 
+    fun pieceCupcake(): Boolean = uiState.value.quantity <= 1
+
     fun formatTotalPrice(): String {
         return if (_uiState.value.dateList.isNotEmpty() && _uiState.value.date == _uiState.value.dateList[0]) {
             //Aynı güne sipariş
