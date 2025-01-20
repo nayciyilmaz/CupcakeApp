@@ -39,6 +39,7 @@ fun CupcakeNavigation() {
                 totalPrice = { orderViewModel.formatTotalPrice() }
             )
         }
+
         composable(CupcakeScreens.SelectDateScreen.route) {
             SelectDateScreen(
                 navController = navController,

@@ -16,7 +16,6 @@ class OrderViewModel : ViewModel() {
     private val _uiState = MutableStateFlow(OrderData())
     val uiState: StateFlow<OrderData> = _uiState.asStateFlow()
 
-
     fun setFlavor(setFlavor: String) {
         _uiState.update { currentState ->
             currentState.copy(flavor = setFlavor)

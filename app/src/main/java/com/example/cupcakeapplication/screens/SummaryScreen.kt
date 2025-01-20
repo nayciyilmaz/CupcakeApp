@@ -171,6 +171,7 @@ fun Summary(
         text = flavor,
         fontWeight = FontWeight.Bold
     )
+
     HorizontalDivider(thickness = 1.dp)
     Text(text = stringResource(R.string.pickup_date))
     Text(
